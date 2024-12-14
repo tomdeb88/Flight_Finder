@@ -16,7 +16,9 @@ class DataManager:
         self.cities_data={}
         self.get_cities_data()
 
+
     def get_cities_data(self):
         response=requests.get(url=SHEETY_ENDPOINT,auth=self.authorization)
         data=response.json()
         self.cities_data=data['prices']
+        return self.cities_data
